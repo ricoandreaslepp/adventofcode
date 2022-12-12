@@ -5,10 +5,8 @@ class monkey:
     items = ops = test = t = f = None
     total = 0
     
-# throw to the end of a monkey's list
-# divided by 3 and rounded to nearest int
 m = []
-f = open("example_case")
+f = open("case")
 while True:
     mk = monkey()
     if not f.readline():
@@ -24,13 +22,13 @@ while True:
 
     f.readline()
 
-for rnd in range(100):
+for rnd in range(10000):
     #print("on round", rnd)
     for i in range(len(m)):
         for j in range(len(m[i].items)):        
             m[i].total += 1
             old = m[i].items.pop(0)
-            old = eval(m[i].ops)
+            old = eval(m[i].ops)%9699690
             #print(old)
             if old%m[i].test==0:
                 m[m[i].t].items.append(old)
@@ -39,8 +37,8 @@ for rnd in range(100):
                 m[m[i].f].items.append(old)
                 #print("thrown to monkey", m[i].f)
 
-    print("after round", rnd)
-    print([m[xi].items for xi in range(len(m))])
+    #print("after round", rnd)
+    #print([m[xi].items for xi in range(len(m))])
 
 totals = sorted(m[i].total for i in range(len(m)))
 print(totals[-1]*totals[-2], totals[-1], totals[-2])
