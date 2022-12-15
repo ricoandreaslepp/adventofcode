@@ -34,6 +34,7 @@ def comparisons(l1, l2):
 
         else:
             # one of them is integer
+            # still needs additions
             if isinstance(l1, list):
                 return comparisons(l1, [l2])
             elif isinstance(l2, list):
