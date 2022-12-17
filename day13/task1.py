@@ -17,6 +17,7 @@ else
 def comparisons(l1, l2):       
     i = 0
     while True:
+        print(f"comparing {l1} {l2}")
         # siin probleem
         if len(l1)==i and len(l2)==i:
             return None
@@ -27,7 +28,6 @@ def comparisons(l1, l2):
             return False
 
         x, y = l1[i], l2[i]
-        print(f"comparing {x} {y}")
         if isinstance(x, int) and isinstance(y, int):
             if x<y:
                 return True
